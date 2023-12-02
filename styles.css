@@ -1,0 +1,367 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/**********CUSTOM CSS***********/
+
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
+
+:root{
+    --yellow: #f6d64a;
+    --teal: #55BCD5;
+    --purple: #9B26B0;
+    --blue: #499BD2;
+    --dark-gray: #222222;
+    --light-gray: #EAEAEA;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+h1, h2, h3{
+    font-family: 'Molle', cursive;
+}
+
+h4,p,q,small,nav,button,form{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+#skip {
+    background: var(--white);
+    height: 30px;
+    padding: 8px;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+  }
+  
+#skip:focus {
+    transform: translateY(0%);
+}
+
+header{
+    background-image: linear-gradient(var(--blue),var(--white));
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    justify-content: center;
+    padding: 18px;
+}
+
+footer{
+    background-color: var(--light-gray);
+}
+
+h1{
+    font-size: 42px;
+    font-weight: bold;
+    /* margin: 12px; */
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 0;
+    grid-row-end: 1;
+}
+
+header p{
+    margin: 12px;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#logo{
+    grid-column-start: 0;
+    grid-column-end: 1;
+    grid-row: span 2;
+}
+
+#menu-toggle label, #menu-toggle input{
+    display: none;
+}
+
+nav{
+    grid-column-start: -1;
+    grid-column-end: -1;
+    grid-row-start: 0;
+    grid-row-end: 1;
+    position: absolute;
+    top:0px;
+    right:0px;
+}
+
+nav a{
+    text-decoration:none;
+    text-align: center;
+    display: block;
+    /* padding: 0.5rem; */
+    margin: 1rem 0;
+    /* background-color: var(--white); */
+    color: var(--black);
+    /* font-size: 1.1rem; */
+    font-weight: bold;
+    /* border-radius: 0.25rem; */
+}
+
+nav li {
+    list-style:none;
+    float: left;
+    padding: 0.25rem;
+    /* margin: 1rem 0; */
+    width: 150px;
+    margin-left: 1rem;
+    background-color: var(--white);
+}
+
+.active{
+    background-color: var(--yellow);
+}
+
+q{
+    font-style: italic;
+    line-height: 1.5;
+}
+
+#intro{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+#intro h2{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 0;
+    grid-row-end: 1;
+}
+#intro p{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    line-height: 1.5;
+    margin: 12px;
+    font-size: 16px;
+}
+
+#intro h2{
+    font-size: 36px;
+    font-weight: bold;
+    margin: 12px;
+}
+
+
+#img-grid{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: center;
+}
+
+/* #testimonials h4{
+    font-size: 42px;
+    font-weight:bold;
+    margin: 12px;
+} */
+
+h3{
+    font-size: 32px;
+    font-weight: bold;
+    margin: 24px;
+}
+
+h4{
+    font-size: 28px;
+    font-weight:bold;
+    margin: 12px;
+}
+
+
+#about{
+    background-color: var(--blue);
+}
+
+#plan{
+    background-color: var(--yellow);
+}
+
+#testimonials, #about, #plan{
+    padding: 100px;
+}
+
+#testimonials p{
+    margin: 10px;
+}
+
+#testimonials div{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+}
+
+#testimonials section{
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#about div{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+}
+
+#about section{
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#plan div{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#plan section{
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    padding: 18px;
+    background-color: var(--teal);
+    border-radius: 10px;
+    border: 3px solid var(--white);
+}
+
+.form-required{
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 75%;
+    margin: 0 auto;
+}
+
+
+
+
+
+label{
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+input{
+    padding: 0.5rem;
+    border: 1px solid var(--purple);
+    border-radius: 4px;
+}
+
+
+
+
+#names{
+    grid-column-start: 0;
+    grid-column-end: 1;
+}
+
+#nums{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#selects{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    padding: 15px;
+}
+
+footer p, footer a{
+    margin: 15px;
+    color: var(--dark-gray);
+}
+
+footer a{
+    text-decoration:none;
+    text-align: center;
+}
+
+/* ----- SMALL SCREEN STYLES ----- */
+@media screen and (min-width: 320px){
+}
+
+/* ----- MEDIUM SCREEN STYLES ----- */
+@media screen and (min-width: 500px){
+}
+
+/* ----- LARGE SCREEN STYLES ----- */
+@media screen and (min-width: 980px){
+}
+
+/* ----- EXTRA LARGE SCREEN STYLES ----- */
+@media screen and (min-width: 1250px){
+}
